@@ -1,7 +1,7 @@
 #The script to build docker image
 
-export TYPE=$BRANCH
-export TAG=0.${BUILD_VERSION}
+export TYPE=$1
+export TAG=0.$2
 export PATH=/usr/libexec/docker/cli-plugins:$PATH
 docker-compose -f docker-compose.yml build
 if [[ $? eq 0 ]]
